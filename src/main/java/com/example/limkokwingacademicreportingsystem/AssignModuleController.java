@@ -35,7 +35,7 @@ public class AssignModuleController {
     private TableColumn<AssignedModule, String> moduleNameColumn;
 
     @FXML
-    private ComboBox<String> lecturerNameComboBox; // ComboBox for Lecturer names
+    private ComboBox<String> lecturerNameComboBox;
 
     @FXML
     private ComboBox<String> moduleCodeComboBox;
@@ -44,10 +44,10 @@ public class AssignModuleController {
     private ComboBox<String> moduleNameComboBox;
 
     @FXML
-    private Button assignButton; // Assign button
+    private Button assignButton;
 
     @FXML
-    private Button resetButton; // Reset button
+    private Button resetButton;
 
     @FXML
     private Button back_btn;
