@@ -171,8 +171,8 @@ public class AddLecturerController {
 
             if (rowsAffected > 0) {
                 showAlert("Success", "Lecturer deleted successfully!");
-                loadLecturersFromDatabase(); // Reload the TableView
-                clearFields(); // Clear the fields after deletion
+                loadLecturersFromDatabase();
+                clearFields();
             } else {
                 showAlert("Error", "Lecturer not found.");
             }
