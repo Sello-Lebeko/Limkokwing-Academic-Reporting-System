@@ -26,13 +26,13 @@ import java.sql.SQLException;
 public class AddLecturerController {
 
     @FXML
-    private TextField lecturerIdField; // TextField for lecturer ID
+    private TextField lecturerIdField;
     @FXML
-    private TextField lecturerNameField; // TextField for lecturer name
+    private TextField lecturerNameField;
     @FXML
-    private TextField lecturerEmailField; // TextField for lecturer email
+    private TextField lecturerEmailField;
     @FXML
-    private TextField lecturerGenderField; // TextField for lecturer gender
+    private TextField lecturerGenderField;
 
     @FXML
     private Button addLecturerButton;
