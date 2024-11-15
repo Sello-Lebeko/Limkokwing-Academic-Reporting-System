@@ -162,7 +162,7 @@ public class AddLecturerController {
             return;
         }
 
-        // Perform the deletion logic, e.g., remove from the database
+        // Perform the deletion logic remove from the database
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
             String sql = "DELETE FROM lecturer WHERE id = ?";
             PreparedStatement statement = connection.prepareStatement(sql);
