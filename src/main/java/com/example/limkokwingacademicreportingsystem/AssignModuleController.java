@@ -21,7 +21,6 @@ import java.sql.*;
 
 public class AssignModuleController {
 
-    // FXML Fields from AssignModule.fxml
     @FXML
     private TableView<AssignedModule> assignedModuleTable;
 
