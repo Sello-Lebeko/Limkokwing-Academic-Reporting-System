@@ -82,7 +82,7 @@ public class AddSemesterController {
 
         // Connect to the database and insert the semester data
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String sql = "INSERT INTO semester (semester_name, year) VALUES (?, ?)"; // Replace with your actual table and column names
+            String sql = "INSERT INTO semester (semester_name, year) VALUES (?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, semester); // Set the semester name
             statement.setString(2, selectedYear); // Set the selected year
@@ -90,8 +90,8 @@ public class AddSemesterController {
             int rowsAffected = statement.executeUpdate();
             if (rowsAffected > 0) {
                 showAlert("Success", "Semester added successfully!");
-                loadSemestersFromDatabase(); // Reload the table with the new semester
-                clearFields(); // Clear the text field and ComboBox after successful insertion
+                loadSemestersFromDatabase();
+                clearFields();
             } else {
                 showAlert("Error", "Failed to add semester.");
             }
@@ -123,7 +123,7 @@ public class AddSemesterController {
 
     private void clearFields() {
         add_semester.clear();
-        yearComboBox.getSelectionModel().clearSelection(); // Clear the ComboBox selection
+        yearComboBox.getSelectionModel().clearSelection();
     }
 
     private void loadSemestersFromDatabase() {
