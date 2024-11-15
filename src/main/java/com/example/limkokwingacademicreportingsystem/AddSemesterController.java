@@ -84,8 +84,8 @@ public class AddSemesterController {
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
             String sql = "INSERT INTO semester (semester_name, year) VALUES (?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, semester); // Set the semester name
-            statement.setString(2, selectedYear); // Set the selected year
+            statement.setString(1, semester);
+            statement.setString(2, selectedYear);
 
             int rowsAffected = statement.executeUpdate();
             if (rowsAffected > 0) {
@@ -164,7 +164,6 @@ public class AddSemesterController {
             this.year = new SimpleStringProperty(year);
         }
 
-        // Removed the getter methods as they're unnecessary for binding
         public SimpleStringProperty semesterNameProperty() {
             return semesterName;
         }
