@@ -114,7 +114,6 @@ public class PrincipalLecturerController {
 
     @FXML
     public void goBack() {
-        // Load the Admin FXML screen and close the current window
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/limkokwingacademicreportingsystem/Homepage.fxml"));
             AnchorPane adminScreen = loader.load();
@@ -126,8 +125,8 @@ public class PrincipalLecturerController {
         }
     }
     @FXML
-    private void clearFields() {
-        // Clear fields after submission
+    private void clearFields()
+    {
         challengesArea.clear();
         recommendationsArea.clear();
     }

@@ -70,8 +70,6 @@ public class ViewAllLecturersController {
         lecturerNameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         lecturerEmailColumn.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
 
-
-        // Fetch data from the database
         fetchLecturersFromDatabase();
     }
 

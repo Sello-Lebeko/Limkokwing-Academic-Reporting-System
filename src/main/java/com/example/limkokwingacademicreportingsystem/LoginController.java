@@ -24,7 +24,7 @@ public class LoginController {
     @FXML
     private Button loginButton;
     @FXML
-    private Label errorLabel; // Label to show errors
+    private Label errorLabel;
 
     private Connection conn;
 
@@ -65,7 +65,7 @@ public class LoginController {
             stmt.setString(3, Password);
 
             ResultSet rs = stmt.executeQuery();
-            return rs.next(); // Return true if a matching record is found
+            return rs.next();
         } catch (SQLException e) {
             e.printStackTrace();
             showError("Error while querying the database.");

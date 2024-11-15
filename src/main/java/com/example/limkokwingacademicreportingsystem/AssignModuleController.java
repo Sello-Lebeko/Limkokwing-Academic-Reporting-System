@@ -53,9 +53,9 @@ public class AssignModuleController {
     private Button back_btn;
 
     // Database connection details
-    private static final String DB_URL = "jdbc:postgresql://localhost:5432/Limkokwing Academic Reporting System"; // Replace with your database URL
-    private static final String DB_USER = "postgres"; // Replace with your database username
-    private static final String DB_PASSWORD = "1234"; // Replace with your database password
+    private static final String DB_URL = "jdbc:postgresql://localhost:5432/Limkokwing Academic Reporting System";
+    private static final String DB_USER = "postgres";
+    private static final String DB_PASSWORD = "1234";
 
     // ObservableList to hold assigned module data
     private ObservableList<AssignedModule> assignedModuleList = FXCollections.observableArrayList();
@@ -98,8 +98,8 @@ public class AssignModuleController {
             int rowsAffected = statement.executeUpdate();
             if (rowsAffected > 0) {
                 showAlert("Success", "Module assigned successfully!");
-                loadAssignedModulesFromDatabase(); // Reload the table with the new assignment
-                clearFields(); // Clear the ComboBoxes after successful insertion
+                loadAssignedModulesFromDatabase();
+                clearFields();
             } else {
                 showAlert("Error", "Failed to assign module.");
             }
@@ -124,7 +124,7 @@ public class AssignModuleController {
         assignedModuleList.clear(); // Clear existing data
 
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String sql = "SELECT * FROM assigned_modules"; // Replace with your actual table name
+            String sql = "SELECT * FROM assigned_modules";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
 
@@ -135,7 +135,7 @@ public class AssignModuleController {
                 assignedModuleList.add(new AssignedModule(lecturerName, moduleCode, moduleName));
             }
 
-            assignedModuleTable.setItems(assignedModuleList); // Set the items for the TableView
+            assignedModuleTable.setItems(assignedModuleList);
         } catch (SQLException e) {
             e.printStackTrace();
             showAlert("Database Error", "An error occurred while fetching data from the database.");
@@ -147,7 +147,7 @@ public class AssignModuleController {
         ObservableList<String> moduleNames = FXCollections.observableArrayList();
 
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String sql = "SELECT module_code, module_name FROM module"; // Replace with your actual modules table name
+            String sql = "SELECT module_code, module_name FROM module";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
 
@@ -168,7 +168,7 @@ public class AssignModuleController {
         ObservableList<String> lecturerNames = FXCollections.observableArrayList();
 
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String sql = "SELECT  name FROM lecturers"; // Modify based on your actual table and column names
+            String sql = "SELECT  name FROM lecturers";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
 

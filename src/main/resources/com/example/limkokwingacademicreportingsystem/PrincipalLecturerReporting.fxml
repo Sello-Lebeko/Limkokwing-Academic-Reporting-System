@@ -10,22 +10,18 @@
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.example.limkokwingacademicreportingsystem.PrincipalLecturerController">
     <VBox alignment="CENTER" spacing="15" style="-fx-background-color: #F3F7FB; -fx-padding: 20px; -fx-border-width: 2;">
 
-        <!-- Header Section -->
         <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2196F3;" text="Weekly Module Report" />
 
-        <!-- Class and Module Selection -->
         <Label style="-fx-font-size: 14px; -fx-text-fill: #555;" text="Select Class and Module:" />
         <ComboBox fx:id="classComboBox" promptText="Select Class" />
         <ComboBox fx:id="moduleComboBox" promptText="Select Module" />
 
-        <!-- Challenges and Recommendations Section -->
         <Label style="-fx-font-size: 14px; -fx-text-fill: #555;" text="Challenges Faced:" />
         <TextArea fx:id="challengesArea" promptText="Describe challenges faced..." style="-fx-pref-height: 100px;" wrapText="true" />
 
         <Label style="-fx-font-size: 14px; -fx-text-fill: #555;" text="Recommendations:" />
         <TextArea fx:id="recommendationsArea" promptText="Provide recommendations..." style="-fx-pref-height: 100px;" wrapText="true" />
 
-        <!-- Submit Button -->
         <Button fx:id="submitReportButton" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold;" text="Submit Report" />
       <Button fx:id="backbtn" mnemonicParsing="false" onAction="#goBack" prefHeight="26.0" prefWidth="97.0" style="-fx-background-color: #2196F3;" text="Back" textFill="#fffbfb" />
     </VBox>

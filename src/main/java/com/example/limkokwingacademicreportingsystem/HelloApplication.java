@@ -18,13 +18,12 @@ public class HelloApplication extends Application {
 
             stage.show();
         } catch (Exception e) {
-            e.printStackTrace();  // Print the error stack trace for debugging
-            showErrorAlert(e.getMessage());  // Show alert with error message
+            e.printStackTrace();
+            showErrorAlert(e.getMessage());
         }
     }
 
     private void showErrorAlert(String errorMessage) {
-        // Create an alert box to show the error message
         Alert alert = new Alert(AlertType.ERROR);
         alert.setTitle("Error");
         alert.setHeaderText("An error occurred while loading the application");

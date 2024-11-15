@@ -8,7 +8,6 @@
 
 <AnchorPane prefHeight="453.0" prefWidth="663.0" style="-fx-background-color: #F3F7FB;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.limkokwingacademicreportingsystem.AddAcademicYearController">
    <children>
-      <!-- Label for Academic Year Selection -->
       <Label layoutX="59.0" layoutY="42.0" text="Select Academic Year" textFill="#2196f3">
          <font>
             <Font name="System Bold" size="16.0" />

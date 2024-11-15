@@ -93,8 +93,6 @@ public class LecturerController {
                 // Create a CheckBox for each student
                 CheckBox presentCheckBox = new CheckBox("Present");
                 CheckBox absentCheckBox = new CheckBox("Absent");
-
-                // Add a listener to the present checkbox to mark the student as present or absent
                 presentCheckBox.setOnAction(e -> {
                     if (presentCheckBox.isSelected()) {
                         absentCheckBox.setSelected(false);

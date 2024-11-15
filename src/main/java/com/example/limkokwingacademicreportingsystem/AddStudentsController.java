@@ -29,15 +29,14 @@ public class AddStudentsController {
     @FXML
     private TextField id_txt_field;
     @FXML
-    private TextField email_txt_field; // Field for email
+    private TextField email_txt_field;
     @FXML
-    private TextField gender_txt_field; // Field for gender
+    private TextField gender_txt_field;
 
     @FXML
-    private TextField age_txt_field; // Field for age
+    private TextField age_txt_field;
     @FXML
-    private TextField assign_txt_field; // Field for class
-
+    private TextField assign_txt_field;
     @FXML
     private Button addStudentBtn;
 
@@ -117,8 +116,8 @@ public class AddStudentsController {
             int rowsAffected = statement.executeUpdate();
             if (rowsAffected > 0) {
                 showAlert("Success", "Student added successfully!");
-                loadStudentsFromDatabase(); // Reload the table with the new student
-                clearFields(); // Clear the text fields after successful insertion
+                loadStudentsFromDatabase();
+                clearFields();
 
                 // After adding, assign the class to the student
                 assignClass(studentID, studentClass);
@@ -170,7 +169,7 @@ public class AddStudentsController {
         studentList.clear(); // Clear existing data
 
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String sql = "SELECT * FROM students"; // Adjust table name if necessary
+            String sql = "SELECT * FROM students";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
 

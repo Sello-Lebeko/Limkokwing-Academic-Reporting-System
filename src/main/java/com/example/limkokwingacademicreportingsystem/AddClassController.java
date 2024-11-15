@@ -37,15 +37,14 @@ public class AddClassController {
     private Button reset;
 
     @FXML
-    private TableView<ClassData> classesTable; // TableView to display classes
-
+    private TableView<ClassData> classesTable;
     @FXML
-    private TableColumn<ClassData, String> classNameColumn; // TableColumn to display class names
+    private TableColumn<ClassData, String> classNameColumn;
 
     // Database connection details
-    private static final String DB_URL = "jdbc:postgresql://localhost:5432/Limkokwing Academic Reporting System"; // Replace with your database URL
-    private static final String DB_USER = "postgres"; // Replace with your database username
-    private static final String DB_PASSWORD = "1234"; // Replace with your database password
+    private static final String DB_URL = "jdbc:postgresql://localhost:5432/Limkokwing Academic Reporting System";
+    private static final String DB_USER = "postgres";
+    private static final String DB_PASSWORD = "1234";
 
     // This method is triggered when the Add button is clicked
     @FXML
@@ -59,15 +58,15 @@ public class AddClassController {
 
         // Connect to the database and insert data
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String sql = "INSERT INTO class (name) VALUES (?)"; // Replace "classes" and "class_name" with your actual table and column names
+            String sql = "INSERT INTO class (name) VALUES (?)";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, className);
 
             int rowsAffected = statement.executeUpdate();
             if (rowsAffected > 0) {
                 showAlert("Success", "Class added successfully!");
-                clearFields(); // Clear the text field after successful insertion
-                loadClasses(); // Reload the table to reflect the new class
+                clearFields();
+                loadClasses();
             } else {
                 showAlert("Error", "Failed to add class.");
             }
@@ -118,13 +117,13 @@ public class AddClassController {
 
         // Fetch data from the database
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String sql = "SELECT name FROM class"; // Replace with your actual SQL query
+            String sql = "SELECT name FROM class";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 String className = resultSet.getString("name");
-                classList.add(new ClassData(className)); // Add each class to the list
+                classList.add(new ClassData(className));
             }
 
             // Set the data in the TableView

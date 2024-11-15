@@ -24,9 +24,9 @@ public class SignUpController {
     private CheckBox termsCheckBox;
 
     // Database credentials
-    private static final String URL = "jdbc:postgresql://localhost:5432/Limkokwing Academic Reporting System"; // Update with your database URL
-    private static final String USER = "postgres"; // Your database username
-    private static final String PASSWORD = "1234"; // Your database password
+    private static final String URL = "jdbc:postgresql://localhost:5432/Limkokwing Academic Reporting System";
+    private static final String USER = "postgres";
+    private static final String PASSWORD = "1234";
 
     @FXML
     private void handleSignUp() {
@@ -50,14 +50,14 @@ public class SignUpController {
         // Save to the database and handle success/failure
         if (saveToDatabase(UserID,Name, Email, Password)) {
             showAlert("Account created successfully!");
-            navigateToLogin(null); // Navigate to login after successful registration
+            navigateToLogin(null);
         } else {
             showAlert("Failed to create account.");
         }
     }
 
     private boolean saveToDatabase(String UserID,String Name, String Email, String Password) {
-        String sql = "INSERT INTO signup (UserID,Name, Email, Password) VALUES (?, ?, ?, ?)"; // Assuming 'signup' table
+        String sql = "INSERT INTO signup (UserID,Name, Email, Password) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -101,6 +101,6 @@ public class SignUpController {
 
     @FXML
     private void navigateToLoginLabel(MouseEvent event) {
-        navigateToLogin(event); // Use this method to navigate to the login page when the label is clicked
+        navigateToLogin(event);
     }
 }

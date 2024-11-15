@@ -26,16 +26,16 @@ import java.sql.SQLException;
 public class AddModuleController {
 
     @FXML
-    private TextField module_code_txt_field; // TextField for module code
+    private TextField module_code_txt_field;
     @FXML
-    private TextField module_name_text_field; // TextField for module name
+    private TextField module_name_text_field;
 
     @FXML
-    private Button add_btn; // Button to add module
+    private Button add_btn;
     @FXML
-    private Button reset_btn; // Button to reset fields
+    private Button reset_btn;
     @FXML
-    private Button back_btn; // Button to go back
+    private Button back_btn;
 
     @FXML
     private TableView<Module> moduleTable;
@@ -101,7 +101,7 @@ public class AddModuleController {
     }
 
     private void loadModulesFromDatabase() {
-        moduleList.clear(); // Clear existing data
+        moduleList.clear();
 
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
             String sql = "SELECT * FROM module";
@@ -115,7 +115,7 @@ public class AddModuleController {
                 moduleList.add(new Module(moduleId, moduleName));
             }
 
-            moduleTable.setItems(moduleList); // Set items for TableView
+            moduleTable.setItems(moduleList);
         } catch (SQLException e) {
             e.printStackTrace();
             showAlert("Database Error", "An error occurred while fetching data from the database.");

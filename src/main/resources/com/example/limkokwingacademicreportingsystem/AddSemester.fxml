@@ -22,7 +22,6 @@
                </font>
             </Label>
 
-            <!-- ComboBox for selecting year -->
             <ComboBox fx:id="yearComboBox" layoutX="99.0" layoutY="128.0" prefHeight="25.0" prefWidth="200.0">
                <items>
                   <FXCollections fx:factory="observableArrayList">

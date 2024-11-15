@@ -62,7 +62,7 @@ public class AdminController {
     public void initialize() {
         loadBarChartData();
         loadPieChartData();
-        courseProgressBar.setProgress(0.65); // Example progress; update as needed
+        courseProgressBar.setProgress(0.65);
 
         // Event handling for each button
         dashboardButton.setOnAction(e -> navigateTo("Admin.fxml"));
@@ -113,7 +113,7 @@ public class AdminController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
             AnchorPane root = loader.load();
 
-            // Get the stage from the current scene (if any) and set a new scene
+            // Get the stage from the current scene
             Stage stage = (Stage) dashboardButton.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();

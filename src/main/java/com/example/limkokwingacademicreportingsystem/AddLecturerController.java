@@ -58,9 +58,9 @@ public class AddLecturerController {
     private TableColumn<Lecturer, String> lecturerGenderColumn;
 
     // Database connection details
-    private static final String DB_URL = "jdbc:postgresql://localhost:5432/Limkokwing Academic Reporting System"; // Replace with your database URL
-    private static final String DB_USER = "postgres"; // Replace with your database username
-    private static final String DB_PASSWORD = "1234"; // Replace with your database password
+    private static final String DB_URL = "jdbc:postgresql://localhost:5432/Limkokwing Academic Reporting System";
+    private static final String DB_USER = "postgres";
+    private static final String DB_PASSWORD = "1234";
 
     // ObservableList to hold lecturer data
     private ObservableList<Lecturer> lecturerList = FXCollections.observableArrayList();
@@ -84,7 +84,7 @@ public class AddLecturerController {
         String lecturerId = lecturerIdField.getText();
         String lecturerName = lecturerNameField.getText();
         String lecturerEmail = lecturerEmailField.getText();
-        String lecturerGender = lecturerGenderField.getText(); // Get gender from TextField
+        String lecturerGender = lecturerGenderField.getText();
 
         // Validation check
         if (lecturerId.isEmpty() || lecturerName.isEmpty() || lecturerEmail.isEmpty() || lecturerGender.isEmpty()) {
@@ -99,14 +99,14 @@ public class AddLecturerController {
 
             statement.setString(1, lecturerId);
             statement.setString(2, lecturerName);
-            statement.setString(3, lecturerEmail); // Set the lecturer email
-            statement.setString(4, lecturerGender); // Set the lecturer gender
+            statement.setString(3, lecturerEmail);
+            statement.setString(4, lecturerGender);
 
             int rowsAffected = statement.executeUpdate();
             if (rowsAffected > 0) {
                 showAlert("Success", "Lecturer added successfully!");
-                loadLecturersFromDatabase(); // Reload the table with the new lecturer
-                clearFields(); // Clear the fields after successful insertion
+                loadLecturersFromDatabase();
+                clearFields();
             } else {
                 showAlert("Error", "Failed to add lecturer.");
             }
@@ -124,10 +124,10 @@ public class AddLecturerController {
     }
 
     private void loadLecturersFromDatabase() {
-        lecturerList.clear(); // Clear existing data
+        lecturerList.clear();
 
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String sql = "SELECT * FROM lecturers"; // Replace with your actual table name
+            String sql = "SELECT * FROM lecturers";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
 
@@ -139,7 +139,7 @@ public class AddLecturerController {
                 lecturerList.add(new Lecturer(lecturerId, lecturerName, lecturerEmail, lecturerGender));
             }
 
-            lecturerTable.setItems(lecturerList); // Set the items for the TableView
+            lecturerTable.setItems(lecturerList);
         } catch (SQLException e) {
             e.printStackTrace();
             showAlert("Database Error", "An error occurred while fetching data from the database.");
@@ -156,8 +156,7 @@ public class AddLecturerController {
 
     @FXML
     public void deleteLecturer() {
-        // Logic to delete lecturer (e.g., from database or TableView)
-        String lecturerId = lecturerIdField.getText(); // Get the lecturer ID from the TextField
+        String lecturerId = lecturerIdField.getText();
         if (lecturerId.isEmpty()) {
             showAlert("Input Error", "Please provide a lecturer ID to delete.");
             return;

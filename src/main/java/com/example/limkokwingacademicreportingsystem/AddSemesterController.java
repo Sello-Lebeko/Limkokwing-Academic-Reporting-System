@@ -46,12 +46,12 @@ public class AddSemesterController {
     private TableColumn<Semester, String> yearColumn;
 
     @FXML
-    private ComboBox<String> yearComboBox; // ComboBox for selecting year
+    private ComboBox<String> yearComboBox;
 
     // Database connection details
-    private static final String DB_URL = "jdbc:postgresql://localhost:5432/Limkokwing Academic Reporting System"; // Replace with your database URL
-    private static final String DB_USER = "postgres"; // Replace with your database username
-    private static final String DB_PASSWORD = "1234"; // Replace with your database password
+    private static final String DB_URL = "jdbc:postgresql://localhost:5432/Limkokwing Academic Reporting System";
+    private static final String DB_USER = "postgres";
+    private static final String DB_PASSWORD = "1234";
 
     // ObservableList to hold semester data
     private ObservableList<Semester> semesterList = FXCollections.observableArrayList();
@@ -127,20 +127,20 @@ public class AddSemesterController {
     }
 
     private void loadSemestersFromDatabase() {
-        semesterList.clear(); // Clear existing data
+        semesterList.clear();
 
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String sql = "SELECT * FROM semester"; // Replace with your actual table name
+            String sql = "SELECT * FROM semester";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                String semesterName = resultSet.getString("semester_name"); // Assuming your table has a "semester_name" column
-                String year = resultSet.getString("year"); // Assuming you have a "year" column
+                String semesterName = resultSet.getString("semester_name");
+                String year = resultSet.getString("year");
                 semesterList.add(new Semester(semesterName, year));
             }
 
-            semesterTable.setItems(semesterList); // Set the items for the TableView
+            semesterTable.setItems(semesterList);
         } catch (SQLException e) {
             e.printStackTrace();
             showAlert("Database Error", "An error occurred while fetching data from the database.");

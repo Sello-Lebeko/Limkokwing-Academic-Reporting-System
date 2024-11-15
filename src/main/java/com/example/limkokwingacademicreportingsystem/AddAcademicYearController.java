@@ -19,9 +19,9 @@ import java.sql.SQLException;
 public class AddAcademicYearController {
 
     @FXML
-    private ComboBox<String> academicYearComboBox;  // ComboBox to select academic year
+    private ComboBox<String> academicYearComboBox;
     @FXML
-    private Label resultLabel;  // Label to display success or error messages
+    private Label resultLabel;
 
     // Database connection details
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/Limkokwing Academic Reporting System";
