@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="551.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.limkokwingacademicreportingsystem.AddLecturerController">
+   <children>
+      <Pane prefHeight="514.0" prefWidth="691.0" style="-fx-background-color: #F3F7FB;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="lecturerTable" layoutX="83.0" layoutY="210.0" prefHeight="256.0" prefWidth="712.0">
+              <columns>
+                <TableColumn fx:id="lecturerNameColumn" prefWidth="186.3999481201172" text="Lecturer Name" />
+                <TableColumn fx:id="lecturerIdColumn" prefWidth="161.5999755859375" text="Lecturer ID" />
+                  <TableColumn fx:id="lecturerEmailColumn" prefWidth="266.4000244140625" text="Email Address " />
+                  <TableColumn fx:id="lecturerGenderColumn" prefWidth="96.800048828125" text="Gender" />
+              </columns>
+            </TableView>
+            <Label layoutX="79.0" layoutY="103.0" text="Name" textFill="#2196f3">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="lecturerNameField" layoutX="79.0" layoutY="128.0" prefHeight="25.0" prefWidth="159.0" promptText="Enter Name" />
+            <Label layoutX="280.0" layoutY="100.0" text="Lecturer ID" textFill="#2196f3">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="lecturerIdField" layoutX="280.0" layoutY="128.0" prefHeight="25.0" prefWidth="159.0" promptText="Enter ID" />
+            <Label layoutX="460.0" layoutY="95.0" text="Email Address " textFill="#2196f3">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="lecturerEmailField" layoutX="460.0" layoutY="128.0" prefHeight="25.0" prefWidth="159.0" promptText="Enter Email Address" />
+            <Label layoutX="642.0" layoutY="99.0" text="Gender" textFill="#2196f3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="lecturerGenderField" layoutX="642.0" layoutY="128.0" promptText="Enter Gender" />
+            <Button fx:id="add_btn" layoutX="708.0" layoutY="172.0" mnemonicParsing="false" onAction="#addLecturer" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #2196f3;" text="Add" textFill="WHITE" />
+            <Button fx:id="delete_btn" layoutX="259.0" layoutY="499.0" mnemonicParsing="false" onAction="#deleteLecturer" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #2196f3;" text="Delete" textFill="WHITE" />
+            <Button fx:id="back_btn" layoutX="515.0" layoutY="499.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #2196f3;" text="Back" textFill="WHITE" />
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

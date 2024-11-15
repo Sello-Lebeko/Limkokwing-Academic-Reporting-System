@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+<AnchorPane prefHeight="612.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.limkokwingacademicreportingsystem.AddSemesterController">
+   <children>
+      <Pane layoutX="52.0" layoutY="32.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F3F7FB;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="99.0" layoutY="89.0" text="Select year" textFill="#2196f3">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
 
+            <!-- ComboBox for selecting year -->
+            <ComboBox fx:id="yearComboBox" layoutX="99.0" layoutY="128.0" prefHeight="25.0" prefWidth="200.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Year 1" />
+                     <String fx:value="Year 2" />
+                     <String fx:value="Year 3" />
+                     <String fx:value="Year 4" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+
+            <Label layoutX="409.0" layoutY="91.0" text="Add Semester" textFill="#2196f3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="add_semester_btn" layoutX="509.0" layoutY="460.0" mnemonicParsing="false" onAction="#addSemester" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: #2196F3;" text="Add" textFill="WHITE" />
+            <Button fx:id="reset_btn" layoutX="300.0" layoutY="460.0" mnemonicParsing="false" onAction="#resetFields" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: #2196F3;" text="Reset" textFill="WHITE" />
+            <TextField fx:id="add_semester" layoutX="409.0" layoutY="128.0" prefHeight="25.0" prefWidth="200.0" promptText="Add semester" />
+            <TableView fx:id="semesterTable" layoutX="92.0" layoutY="225.0" prefHeight="200.0" prefWidth="520.0">
+               <columns>
+                  <TableColumn fx:id="yearColumn" prefWidth="259.1999740600586" text="Year" />
+                  <TableColumn fx:id="semesterNameColumn" prefWidth="260.8000793457031" text="Semester" />
+               </columns>
+            </TableView>
+            <Button fx:id="backbtn" layoutX="92.0" layoutY="460.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: #2196F3;" text="Back" textFill="WHITE" />
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

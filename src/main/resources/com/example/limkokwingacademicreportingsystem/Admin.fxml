@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="634.0" prefWidth="1111.0" style="-fx-background-color: #F3F7FB;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.limkokwingacademicreportingsystem.AdminController">
+
+    <!-- Profile Section Pane -->
+    <Pane layoutX="10" layoutY="10" />
+
+    <!-- Search Bar -->
+    <TextField fx:id="searchField" layoutX="340.0" layoutY="14.0" prefWidth="200.0" promptText="Search..." style="-fx-padding: 5px; -fx-background-color: white; -fx-border-radius: 5px; -fx-border-color: #ccc; -fx-font-size: 14px;" />
+
+    <!-- Left Side VBox for Dashboard, Search, and Buttons -->
+    <VBox prefHeight="633.0" prefWidth="194.0" spacing="20" style="-fx-background-color: white; -fx-border-radius: 10px; -fx-padding: 20px 20px;">
+   
+       <!-- Dashboard Title -->
+       <Label prefHeight="42.0" prefWidth="127.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Faculty Admin " textFill="#2196f3" />
+      <Button fx:id="dashboardButton" mnemonicParsing="false" prefHeight="33.0" prefWidth="154.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Dashboard">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="addLecturerButton" mnemonicParsing="false" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Add Lecturer" />
+      <Button fx:id="addAcademicYearButton" mnemonicParsing="false" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Add Academic Year" />
+      <Button fx:id="addSemesterButton" mnemonicParsing="false" prefHeight="33.0" prefWidth="154.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Add Semester" />
+      <Button fx:id="addModuleButton" mnemonicParsing="false" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Add Module" />
+      <Button fx:id="addClassButton" mnemonicParsing="false" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Add Class" />
+      <Button fx:id="assignRoleButton" mnemonicParsing="false" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Assign Role" />
+      <Button fx:id="assignModuleButton" mnemonicParsing="false" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Assign Module" />
+      <Button fx:id="addStudentButton" mnemonicParsing="false" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Add Student And Assign" />
+      <effect>
+         <DropShadow>
+            <color>
+               <Color red="0.7684210538864136" green="0.7541910409927368" blue="0.7541910409927368" />
+            </color>
+         </DropShadow>
+      </effect>
+    </VBox>
+
+    <!-- Statistics Section Pane -->
+    <Pane layoutX="250" layoutY="10" />
+    <Label layoutX="626.0" layoutY="283.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Statistics Section" textFill="#2196f3" />
+    <PieChart fx:id="pieChart" layoutX="540.0" layoutY="317.0" prefHeight="200" prefWidth="321.0" style="-fx-background-color: white;" title="Module Distribution" />
+    <BarChart fx:id="barChart" layoutX="208.0" layoutY="260.0" prefHeight="300" prefWidth="300" title="Student Enrollment per Semester">
+        <xAxis>
+            <CategoryAxis label="Semester" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Number of Students" />
+        </yAxis>
+    </BarChart>
+     <Button fx:id="viewProfileButton" layoutX="953.0" layoutY="118.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px;" text="View Profile" />
+   <Button fx:id="viewSemestersButton" layoutX="255.0" layoutY="574.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="View All Semesters" />
+   <Pane layoutX="208.0" layoutY="66.0" prefHeight="78.0" prefWidth="214.0" style="-fx-background-color: white;">
+      <children>
+         <Button fx:id="viewLecturersButton" layoutX="34.0" layoutY="38.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="View All Lecturers" />
+         <Label layoutX="36.0" layoutY="6.0" text="Lecturer section">
+            <font>
+               <Font name="System Bold" size="19.0" />
+            </font>
+         </Label>
+      </children>
+   </Pane>
+   <Pane layoutX="208.0" layoutY="159.0" prefHeight="78.0" prefWidth="214.0" style="-fx-background-color: white;">
+      <children>
+         <Button fx:id="viewModulesButton" layoutX="32.0" layoutY="39.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="154.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="View All Modules" />
+         <Label layoutX="40.0" layoutY="8.0" text="Module Section">
+            <font>
+               <Font name="System Bold" size="19.0" />
+            </font>
+         </Label>
+      </children>
+   </Pane>
+   <Pane layoutX="446.0" layoutY="66.0" prefHeight="170.0" prefWidth="200.0" style="-fx-background-color: white;">
+      <children>
+         <Label layoutX="34.0" layoutY="13.0" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: #2196F3;" text=" New Lecturer" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </Label>
+         <Button layoutX="116.0" layoutY="131.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #2196F3;" text="View " textFill="WHITE" />
+         <ImageView fitHeight="90.0" fitWidth="134.0" layoutX="34.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../Images/NewIcon.jpg" />
+            </image>
+         </ImageView>
+      </children>
+   </Pane>
+   <Pane layoutX="660.0" layoutY="165.0" prefHeight="72.0" prefWidth="200.0" style="-fx-background-color: white;">
+      <children>
+         <Label layoutX="40.0" layoutY="10.0" text="Course completion" textFill="#2196f3">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+          <ProgressBar fx:id="courseProgressBar" layoutX="20.0" layoutY="40.0" prefWidth="160.0" progress="0.0" style="-fx-accent: #2196f3;" />
+      </children>
+   </Pane>
+   <Pane layoutX="874.0" layoutY="162.0" prefHeight="359.0" prefWidth="214.0" style="-fx-background-color: #2196F3;">
+      <children>
+         <Label layoutX="44.0" layoutY="24.0" prefHeight="20.0" prefWidth="154.0" text="Overall Students and " textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+         <Label layoutX="44.0" layoutY="44.0" prefHeight="20.0" prefWidth="92.0" text="Lecturers" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+          <PieChart fx:id="studentLecturerPieChart" layoutX="7.0" layoutY="82.0" prefHeight="130.0" prefWidth="130.0" />
+      </children>
+   </Pane>
+   <Pane layoutX="660.0" layoutY="67.0" prefHeight="90.0" prefWidth="200.0" style="-fx-background-color: white;">
+      <children>
+         <Label layoutX="14.0" layoutY="14.0" text="Principal Lecturers" textFill="#2196f3">
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="viewPrincipalLecturersButton" layoutX="15.0" layoutY="51.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" style="-fx-background-color: #2196F3;" text="view" textFill="WHITE" />
+      </children>
+   </Pane>
+   <Button fx:id="logoutAsAdminButton" layoutX="437.0" layoutY="574.0" mnemonicParsing="false" onAction="#goBack" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #2196F3;" text="Logout as Admin" textFill="WHITE" />
+   <ImageView fitHeight="52.0" fitWidth="56.0" layoutX="973.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../../Images/Profile.png" />
+      </image>
+   </ImageView>
+   <Label layoutX="978.0" layoutY="64.0" text="Name">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <Label layoutX="962.0" layoutY="84.0" text="Email Address" />
+   <Label layoutX="919.0" layoutY="27.0" text="Admin">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+   </Label>
+
+</AnchorPane>

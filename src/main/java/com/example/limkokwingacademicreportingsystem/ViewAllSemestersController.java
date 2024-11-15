@@ -1,2 +1,4 @@
-package com.example.limkokwingacademicreportingsystem;public class ViewAllSemestersController {
+package com.example.limkokwingacademicreportingsystem;
+
+public class ViewAllSemestersController {
 }

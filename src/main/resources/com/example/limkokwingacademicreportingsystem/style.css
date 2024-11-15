@@ -1,0 +1,29 @@
+/* style.css */
+
+.button {
+    -fx-background-color: #2196F3;       /* Default color */
+    -fx-text-fill: white;                /* Text color */
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+/* Hover effect */
+.button:hover {
+    -fx-background-color: #1E88E5;       /* Slightly darker color on hover */
+    -fx-cursor: hand;                    /* Changes cursor to a pointer */
+}
+
+/* Selected effect */
+.button:pressed {
+    -fx-background-color: #1565C0;       /* Darker shade when clicked */
+}
+
+/* Optionally, style other components like pie charts or bars */
+.pie-chart {
+    -fx-background-color: transparent;
+}
+.bar-chart {
+    -fx-background-color: transparent;
+}

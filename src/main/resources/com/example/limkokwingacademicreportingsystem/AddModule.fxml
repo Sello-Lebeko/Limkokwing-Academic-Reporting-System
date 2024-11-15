@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="595.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.limkokwingacademicreportingsystem.AddModuleController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F3F7FB;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="moduleTable" layoutX="169.0" layoutY="237.0" prefHeight="200.0" prefWidth="374.0">
+              <columns>
+                <TableColumn fx:id="moduleCodeColumn" prefWidth="187.99998474121094" text="Module Code" />
+                <TableColumn fx:id="moduleNameColumn" prefWidth="184.800048828125" text="Module Name" />
+              </columns>
+            </TableView>
+            <Label layoutX="169.0" layoutY="132.0" text="Module Code" textFill="#2196f3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="module_code_txt_field" layoutX="169.0" layoutY="169.0" prefHeight="25.0" prefWidth="171.0" promptText="Enter Code" />
+            <Label layoutX="372.0" layoutY="131.0" text="Module Name" textFill="#2196f3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="module_name_text_field" layoutX="372.0" layoutY="169.0" prefHeight="25.0" prefWidth="171.0" promptText="Enter Name" />
+            <Button fx:id="reset_btn" layoutX="315.0" layoutY="472.0" mnemonicParsing="false" onAction="#resetFields" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #2196F3;" text="Reset" textFill="WHITE" />
+            <Button fx:id="back_btn" layoutX="169.0" layoutY="472.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #2196F3;" text="Back" textFill="WHITE" />
+            <Button fx:id="add_btn" layoutX="449.0" layoutY="472.0" mnemonicParsing="false" onAction="#addModule" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #2196F3;" text="Add" textFill="#fffbfb" />
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
